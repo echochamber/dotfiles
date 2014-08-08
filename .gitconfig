@@ -1,0 +1,18 @@
+# User setting are configured by environment variables
+# in ~/.localrc
+# [user]
+#     name =
+#     email =
+[core]
+    editor = vim
+[color]
+    ui = true
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red reverse
+    new = green reverse
+    whitespace = white reverse
+[alias]
+    conflicts = !git ls-files -u | cut -f 2 | sort -u
+    fshow = ! sh -c 'git show --pretty="format:" --name-only $1 | grep -v "^$" | uniq | sed -e "s#^#`git rev-parse --show-toplevel`/#"' -
